@@ -1,3 +1,4 @@
+//import React from 'react';
 import InputComponent from './input';
 
 export default {
@@ -35,6 +36,8 @@ export const NumberInput = {
     },
   },
 };
+
+export const CheckboxInput = {};
 
 // id: string;
 //   placeholder?: string;

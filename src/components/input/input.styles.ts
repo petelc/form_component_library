@@ -16,6 +16,18 @@ export const Input = styled.input<InputProps>(
   })
 );
 
+export const Checkbox = styled.input<InputProps>(
+  {
+    type: 'checkbox',
+    width: '16px',
+    height: '16px',
+    marginRight: '8px',
+  },
+  (props) => ({
+    width: props.width || '16px',
+  })
+);
+
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
