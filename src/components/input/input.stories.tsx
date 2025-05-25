@@ -37,8 +37,6 @@ export const NumberInput = {
   },
 };
 
-export const CheckboxInput = {};
-
 // id: string;
 //   placeholder?: string;
 //   type?: string;

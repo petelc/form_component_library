@@ -18,10 +18,13 @@ export const Input = styled.input<InputProps>(
 
 export const Checkbox = styled.input<InputProps>(
   {
+    display: 'flex',
+    flexDirection: 'row',
     type: 'checkbox',
     width: '16px',
     height: '16px',
     marginRight: '8px',
+    outline: '3px solid black',
   },
   (props) => ({
     width: props.width || '16px',
