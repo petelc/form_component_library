@@ -9,15 +9,21 @@ type GroupProps = {
   justifyContent: string;
 };
 
-export const CheckboxGroup = styled.div<GroupProps>(
+export const CheckboxGroup = styled.legend({
+  padding: '10px',
+  backgroundColor: '#f9f9f9',
+  color: '#333',
+});
+
+export const CheckboxGroupWrapper = styled.section<GroupProps>(
   {
-    display: 'grid',
     width: '100%',
+    display: 'grid',
   },
   (props) => ({
     gridTemplateRows: props.rows || 'auto',
     gridTemplateColumns: props.columns || '1fr',
-    gap: props.gap || '8px',
+    gridGap: props.gap || '8px',
     alignContent: props.alignContent || 'start',
     justifyContent: props.justifyContent || 'start',
   })
