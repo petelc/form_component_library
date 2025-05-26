@@ -7,23 +7,29 @@ import {
   CheckboxGroupFieldset,
 } from './checkbox_group.styles';
 
-const data = [
-  {
-    id: 'item1',
-    label: 'Item 1',
-    options: [{ id: 'checkbox1', label: 'Checkbox 1' }],
-  },
-  {
-    id: 'item2',
-    label: 'Item 2',
-    options: [{ id: 'checkbox2', label: 'Checkbox 2', checked: true }],
-  },
-  {
-    id: 'item3',
-    label: 'Item 3',
-    options: [{ id: 'checkbox3', label: 'Checkbox 3', disabled: true }],
-  },
-];
+// const data = [
+//   {
+//     id: 'item1',
+//     label: 'Item 1',
+//     options: [{ id: 'checkbox1', label: 'Checkbox 1' }],
+//   },
+//   {
+//     id: 'item2',
+//     label: 'Item 2',
+//     options: [{ id: 'checkbox2', label: 'Checkbox 2', checked: true }],
+//   },
+//   {
+//     id: 'item3',
+//     label: 'Item 3',
+//     options: [{ id: 'checkbox3', label: 'Checkbox 3', disabled: true }],
+//   },
+// ];
+
+type checkboxData = {
+  id: string;
+  label: string;
+  options: options[];
+};
 
 type options = {
   id: string;
@@ -43,6 +49,7 @@ type CheckboxGroupProps = {
   justifyContent?: string;
   options: options[];
   width?: string;
+  source?: checkboxData[];
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -53,6 +60,7 @@ export default function CheckboxGroupComponent({
   alignContent = 'start',
   justifyContent = 'start',
   width,
+  source = [],
   onChange,
 }: CheckboxGroupProps) {
   return (
@@ -65,12 +73,14 @@ export default function CheckboxGroupComponent({
         alignContent={alignContent}
         justifyContent={justifyContent}
       >
-        {data.map((item) => (
+        {source.map((item) => (
           <CheckboxGroup key={item.id}>
             {item.options.map((option) => (
               <CheckboxComponent
                 id={option.id}
                 key={option.id}
+                checked={option.checked}
+                disabled={option.disabled}
                 value={option.label}
                 onChange={onChange}
               />

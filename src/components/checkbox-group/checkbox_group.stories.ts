@@ -1,5 +1,32 @@
 import CheckboxGroupComponent from './checkbox_group';
 
+const data1 = [
+  {
+    options: [{ id: 'item1', label: 'Item 1', checked: true, disabled: false }],
+  },
+];
+
+const data3 = [
+  {
+    options: [{ id: 'item1', label: 'Item 1' }],
+  },
+  {
+    options: [{ id: 'item2', label: 'Item 2', checked: true }],
+  },
+  {
+    options: [{ id: 'item3', label: 'Item 3', disabled: true }],
+  },
+  {
+    options: [{ id: 'item4', label: 'Item 4' }],
+  },
+  {
+    options: [{ id: 'item5', label: 'Item 5', checked: true }],
+  },
+  {
+    options: [{ id: 'item6', label: 'Item 6', disabled: false }],
+  },
+];
+
 export default {
   component: CheckboxGroupComponent,
   title: 'Components/CheckboxGroup',
@@ -8,11 +35,7 @@ export default {
 
 export const Default = {
   args: {
-    options: [
-      { id: 'checkbox1', label: 'Checkbox 1' },
-      { id: 'checkbox2', label: 'Checkbox 2' },
-      { id: 'checkbox3', label: 'Checkbox 3' },
-    ],
+    source: data1,
   },
 };
 
@@ -24,13 +47,6 @@ export const ThreeButtonLayout = {
     alignContent: 'center',
     justifyContent: 'space-between',
     width: '400px',
-    options: [
-      { id: 'checkbox1', label: 'Checkbox 1' },
-      { id: 'checkbox2', label: 'Checkbox 2', checked: true },
-      { id: 'checkbox3', label: 'Checkbox 3', disabled: true },
-      { id: 'checkbox4', label: 'Checkbox 4' },
-      { id: 'checkbox5', label: 'Checkbox 5' },
-      { id: 'checkbox6', label: 'Checkbox 6' },
-    ],
+    source: data3,
   },
 };
