@@ -1,10 +1,38 @@
-export default function RadioComponent() {
+import { Radio, RadioContainer } from './radio.styles';
+
+type RadioProps = {
+  type?: 'radio';
+  id: string;
+  name: string;
+  value: string;
+  checked?: boolean;
+  disabled?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function RadioComponent({
+  type = 'radio',
+  id,
+  name,
+  value,
+  checked = false,
+  disabled = false,
+  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+  },
+}: RadioProps & { type?: 'radio' }) {
   return (
-    <div>
-      <label htmlFor='radio1'>
-        <input type='radio' id='radio1' name='example' value='option1' />
-        Option 1
-      </label>
-    </div>
+    <RadioContainer>
+      <Radio
+        type={type}
+        id={id}
+        name={name}
+        value={value}
+        checked={checked}
+        disabled={disabled}
+        onChange={onChange}
+      />
+      option 1
+    </RadioContainer>
   );
 }
