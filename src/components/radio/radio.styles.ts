@@ -4,26 +4,26 @@ type RadioProps = {
   width?: string;
 };
 
-export const RadioContainer = styled.div<RadioProps>`
+export const RadioContainer = styled.label<RadioProps>`
   font-family: system-ui, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
   line-height: 1;
   display: grid;
-  grid-template-columns: 1em auto;
-  gap: 0.5em;
+  grid-template-columns: 1.2rem auto;
+  gap: 0.5rem;
+  align-items: center;
 `;
 
 export const Radio = styled.input<RadioProps>`
-  width: 0.65em;
-  height: 0.65em;
-  background-color: antiquewhite;
-  border: 1px solid black;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: #e8e8e8;
+  border: 0.2rem solid #fff;
   border-radius: 50%;
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em green;
-  accent-color: green;
-
+  accent-color: #ff5722;
   &:checked::before {
     transform: scale(1);
   }

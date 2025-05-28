@@ -7,24 +7,6 @@ import {
   CheckboxGroupFieldset,
 } from './checkbox_group.styles';
 
-// const data = [
-//   {
-//     id: 'item1',
-//     label: 'Item 1',
-//     options: [{ id: 'checkbox1', label: 'Checkbox 1' }],
-//   },
-//   {
-//     id: 'item2',
-//     label: 'Item 2',
-//     options: [{ id: 'checkbox2', label: 'Checkbox 2', checked: true }],
-//   },
-//   {
-//     id: 'item3',
-//     label: 'Item 3',
-//     options: [{ id: 'checkbox3', label: 'Checkbox 3', disabled: true }],
-//   },
-// ];
-
 type checkboxData = {
   id: string;
   label: string;

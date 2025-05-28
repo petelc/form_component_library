@@ -1,11 +1,54 @@
-//import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import InputComponent from './input';
 
-export default {
-  component: InputComponent,
+/**
+ * Input stories
+ * This file contains stories for the Input component, showcasing different configurations such as default text input and number input.
+ */
+const meta: Meta<typeof InputComponent> = {
   title: 'Components/Input',
-  tags: ['autodocs'],
+  component: InputComponent,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Input component for text and number inputs. It supports various props like placeholder, type, value, width, maxlength, and disabled state.',
+      },
+    },
+  },
 };
+
+export default meta;
+type Story = StoryObj<typeof InputComponent>;
+
+export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Input component for text and number inputs. It supports various props like placeholder, type, value, width, maxlength, and disabled state.',
+      },
+    },
+  },
+  args: {
+    id: 'default-input',
+    placeholder: 'Type here...',
+    type: 'text',
+    value: '',
+    width: '100%',
+    maxlength: 800,
+    disabled: false,
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(event.target.value);
+    },
+  },
+};
+
+// export default {
+//   component: InputComponent,
+//   title: 'Components/Input',
+//   tags: ['autodocs'],
+// };
 
 export const Default = {
   args: {
@@ -14,7 +57,7 @@ export const Default = {
     type: 'text',
     value: '',
     width: '100%',
-    maxlength: 100,
+    maxlength: '100%',
     disabled: false,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
       console.log(event.target.value);

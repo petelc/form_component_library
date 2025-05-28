@@ -1,40 +1,47 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
 import CheckboxGroupComponent from './checkbox_group';
+import { data1, data3 } from '../../lib/mock/checkbox-data';
 
-const data1 = [
-  {
-    options: [{ id: 'item1', label: 'Item 1', checked: true, disabled: false }],
-  },
-];
-
-const data3 = [
-  {
-    options: [{ id: 'item1', label: 'Item 1' }],
-  },
-  {
-    options: [{ id: 'item2', label: 'Item 2', checked: true }],
-  },
-  {
-    options: [{ id: 'item3', label: 'Item 3', disabled: true }],
-  },
-  {
-    options: [{ id: 'item4', label: 'Item 4' }],
-  },
-  {
-    options: [{ id: 'item5', label: 'Item 5', checked: true }],
-  },
-  {
-    options: [{ id: 'item6', label: 'Item 6', disabled: false }],
-  },
-];
-
-export default {
-  component: CheckboxGroupComponent,
+/**
+ * CheckboxGroup stories
+ * This file contains stories for the CheckboxGroup component, showcasing different configurations such as default layout and three-button layout.
+ */
+const meta: Meta<typeof CheckboxGroupComponent> = {
   title: 'Components/CheckboxGroup',
-  tags: ['autodocs'],
+  component: CheckboxGroupComponent,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Checkbox Group component for displaying a group of checkboxes. It supports various props like grid layout, options, and onChange event handling.',
+      },
+    },
+  },
 };
+export default meta;
+type Story = StoryObj<typeof CheckboxGroupComponent>;
+// export default {
+//   component: CheckboxGroupComponent,
+//   title: 'Components/CheckboxGroup',
+//   tags: ['autodocs'],
+// };
 
-export const Default = {
+export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Checkbox Group component for displaying a group of checkboxes. It supports various props like grid layout, options, and onChange event handling.',
+      },
+    },
+  },
   args: {
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '16px',
+    alignContent: 'center',
+    justifyContent: 'space-between',
+    width: '400px',
     source: data1,
   },
 };
