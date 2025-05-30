@@ -23,6 +23,7 @@ export const Radio = styled.input<RadioProps>`
   border: 0.2rem solid #fff;
   border-radius: 50%;
   transition: 120ms transform ease-in-out;
+
   accent-color: #ff5722;
   &:checked::before {
     transform: scale(1);

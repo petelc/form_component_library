@@ -15,6 +15,7 @@ export const Checkbox = styled.input<CheckboxProps>(
     display: 'inline-block',
     verticalAlign: 'middle',
     accentColor: 'green',
+    transform: 'translateY(-0.075em)',
   },
   (props) => ({
     width: props.width || '16px',

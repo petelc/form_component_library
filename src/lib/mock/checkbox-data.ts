@@ -40,23 +40,4 @@ export const data3: checkboxData[] = [
     label: 'Item 3',
     options: [{ id: 'item3', label: 'Item 3', checked: false, disabled: true }],
   },
-  {
-    id: 'item4',
-    label: 'Item 4',
-    options: [
-      { id: 'item4', label: 'Item 4', checked: false, disabled: false },
-    ],
-  },
-  {
-    id: 'item5',
-    label: 'Item 5',
-    options: [{ id: 'item5', label: 'Item 5', checked: true, disabled: false }],
-  },
-  {
-    id: 'item6',
-    label: 'Item 6',
-    options: [
-      { id: 'item6', label: 'Item 6', checked: false, disabled: false },
-    ],
-  },
 ];
